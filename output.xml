@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-06-02T13:46:20.877097" rpa="false" schemaversion="5">
+<suite id="s1" name="Login" source="C:\Users\HP\my_robot_project\TestCases\Login.robot">
+<test id="s1-t1" name="Register Page" line="15">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-06-02T13:46:21.222291" level="INFO">Opening browser 'Chrome' to base url 'https://thermos.com/account/register'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-06-02T13:46:21.221293" elapsed="62.862081"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-02T13:47:24.085371" level="INFO">Typing text 'Irma Naomi' into text field 'id=FirstName'.</msg>
+<arg>id=FirstName</arg>
+<arg>${FULLNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-02T13:47:24.084374" elapsed="0.345228"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-02T13:47:24.431601" level="INFO">Typing text 'irma4@mailinator.com' into text field 'id=Email'.</msg>
+<arg>id=Email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-02T13:47:24.430600" elapsed="0.269157"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-02T13:47:24.700756" level="INFO">Typing text '08123456789' into text field 'id=Phone'.</msg>
+<arg>id=Phone</arg>
+<arg>${PHONE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-02T13:47:24.700756" elapsed="0.234213"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-02T13:47:24.935965" level="INFO">Typing text '123456' into text field 'id=CreatePassword'.</msg>
+<arg>id=CreatePassword</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-02T13:47:24.935965" elapsed="0.201041"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-02T13:47:25.138009" level="INFO">Typing text '123456' into text field 'id=CreatePassword'.</msg>
+<arg>id=CreatePassword</arg>
+<arg>${CONFIRM_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-02T13:47:25.138009" elapsed="0.569445"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-06-02T13:47:25.708454" level="INFO">Clicking button '//*[@id="create_customer"]/div/button'.</msg>
+<arg>//*[@id="create_customer"]/div/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-02T13:47:25.708454" elapsed="0.344722"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${DASHBOARD_URL}</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-06-02T13:47:26.054181" elapsed="0.026001"/>
+</kw>
+<kw name="Get Location" owner="SeleniumLibrary">
+<msg time="2024-06-02T13:47:26.135695" level="INFO">${current_url} = https://thermos.com/account/register</msg>
+<var>${current_url}</var>
+<doc>Returns the current browser window URL.</doc>
+<status status="PASS" start="2024-06-02T13:47:26.080182" elapsed="0.056515"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<msg time="2024-06-02T13:47:26.137697" level="FAIL">https://thermos.com/account/register != https://thermos.com</msg>
+<arg>${current_url}</arg>
+<arg>${DASHBOARD_URL}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="FAIL" start="2024-06-02T13:47:26.136697" elapsed="0.001000">https://thermos.com/account/register != https://thermos.com</status>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="NOT RUN" start="2024-06-02T13:47:26.138696" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-06-02T13:46:21.220290" elapsed="64.919407">https://thermos.com/account/register != https://thermos.com</status>
+</test>
+<status status="FAIL" start="2024-06-02T13:46:20.879613" elapsed="65.261082"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Login">Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
