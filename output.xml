@@ -1,91 +1,478 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-06-02T13:46:20.877097" rpa="false" schemaversion="5">
-<suite id="s1" name="Login" source="C:\Users\HP\my_robot_project\TestCases\Login.robot">
-<test id="s1-t1" name="Register Page" line="15">
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-06-03T16:39:46.298223" rpa="false" schemaversion="5">
+<suite id="s1" name="Registration" source="C:\Users\HP\my_robot_project\TestCases\Registration.robot">
+<test id="s1-t1" name="Registration With Valid Data" line="8">
+<kw name="Generate Timestamped Email" owner="keywords">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-06-03T16:39:46.727274" level="INFO">${timestamp} = 20240603163946</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-06-03T16:39:46.726274" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-03T16:39:46.727656" level="INFO">${EMAIL} = irmaaaa20240603163946@mailinator.com</msg>
+<var>${EMAIL}</var>
+<arg>irmaaaa${timestamp}@mailinator.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-03T16:39:46.727656" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${EMAIL}</value>
+<status status="PASS" start="2024-06-03T16:39:46.727656" elapsed="0.000000"/>
+</return>
+<msg time="2024-06-03T16:39:46.727656" level="INFO">${EMAIL} = irmaaaa20240603163946@mailinator.com</msg>
+<var>${EMAIL}</var>
+<status status="PASS" start="2024-06-03T16:39:46.724277" elapsed="0.003379"/>
+</kw>
+<kw name="Open Registration Page" owner="keywords">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-06-02T13:46:21.222291" level="INFO">Opening browser 'Chrome' to base url 'https://thermos.com/account/register'.</msg>
+<msg time="2024-06-03T16:39:46.729657" level="INFO">Opening browser 'Chrome' to base url 'https://thermos.com/account/register'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-06-02T13:46:21.221293" elapsed="62.862081"/>
+<status status="PASS" start="2024-06-03T16:39:46.728656" elapsed="8.588523"/>
 </kw>
+<status status="PASS" start="2024-06-03T16:39:46.728656" elapsed="8.588523"/>
+</kw>
+<kw name="Enter a valid full name" owner="keywords">
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-06-02T13:47:24.085371" level="INFO">Typing text 'Irma Naomi' into text field 'id=FirstName'.</msg>
+<msg time="2024-06-03T16:39:55.318689" level="INFO">Typing text 'Irma Naomi' into text field 'id=FirstName'.</msg>
 <arg>id=FirstName</arg>
 <arg>${FULLNAME}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-02T13:47:24.084374" elapsed="0.345228"/>
+<status status="PASS" start="2024-06-03T16:39:55.318689" elapsed="0.281678"/>
+</kw>
+<status status="PASS" start="2024-06-03T16:39:55.317179" elapsed="0.283188"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-06-02T13:47:24.431601" level="INFO">Typing text 'irma4@mailinator.com' into text field 'id=Email'.</msg>
+<msg time="2024-06-03T16:39:55.602365" level="INFO">Typing text 'irmaaaa20240603163946@mailinator.com' into text field 'id=Email'.</msg>
 <arg>id=Email</arg>
 <arg>${EMAIL}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-02T13:47:24.430600" elapsed="0.269157"/>
+<status status="PASS" start="2024-06-03T16:39:55.602365" elapsed="0.337268"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-06-02T13:47:24.700756" level="INFO">Typing text '08123456789' into text field 'id=Phone'.</msg>
+<msg time="2024-06-03T16:39:55.940634" level="INFO">Typing text '08123456789' into text field 'id=Phone'.</msg>
 <arg>id=Phone</arg>
 <arg>${PHONE}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-02T13:47:24.700756" elapsed="0.234213"/>
+<status status="PASS" start="2024-06-03T16:39:55.939633" elapsed="0.155955"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-06-02T13:47:24.935965" level="INFO">Typing text '123456' into text field 'id=CreatePassword'.</msg>
-<arg>id=CreatePassword</arg>
+<msg time="2024-06-03T16:39:56.095588" level="INFO">Typing text '123456' into text field '//*[@id="CreatePassword"][1]'.</msg>
+<arg>//*[@id="CreatePassword"][1]</arg>
 <arg>${PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-02T13:47:24.935965" elapsed="0.201041"/>
+<status status="PASS" start="2024-06-03T16:39:56.095588" elapsed="0.149484"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-06-02T13:47:25.138009" level="INFO">Typing text '123456' into text field 'id=CreatePassword'.</msg>
-<arg>id=CreatePassword</arg>
+<msg time="2024-06-03T16:39:56.246582" level="INFO">Typing text '123456' into text field '//*[@id="CreatePassword"][2]'.</msg>
+<arg>//*[@id="CreatePassword"][2]</arg>
 <arg>${CONFIRM_PASSWORD}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-02T13:47:25.138009" elapsed="0.569445"/>
+<status status="PASS" start="2024-06-03T16:39:56.245072" elapsed="0.138973"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2024-06-02T13:47:25.708454" level="INFO">Clicking button '//*[@id="create_customer"]/div/button'.</msg>
+<msg time="2024-06-03T16:39:56.385045" level="INFO">Clicking button '//*[@id="create_customer"]/div/button'.</msg>
 <arg>//*[@id="create_customer"]/div/button</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2024-06-02T13:47:25.708454" elapsed="0.344722"/>
+<status status="PASS" start="2024-06-03T16:39:56.384045" elapsed="4.283654"/>
 </kw>
-<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Location Should Be" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:00.743651" level="INFO">Current location is 'https://thermos.com/'.</msg>
 <arg>${DASHBOARD_URL}</arg>
-<doc>Waits until ``text`` appears on the current page.</doc>
-<status status="PASS" start="2024-06-02T13:47:26.054181" elapsed="0.026001"/>
+<doc>Verifies that the current URL is exactly ``url``.</doc>
+<status status="PASS" start="2024-06-03T16:40:00.669700" elapsed="0.073951"/>
+</kw>
+<arg>10x</arg>
+<arg>3s</arg>
+<arg>Location Should Be</arg>
+<arg>${DASHBOARD_URL}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-06-03T16:40:00.668699" elapsed="0.074952"/>
 </kw>
 <kw name="Get Location" owner="SeleniumLibrary">
-<msg time="2024-06-02T13:47:26.135695" level="INFO">${current_url} = https://thermos.com/account/register</msg>
+<msg time="2024-06-03T16:40:00.757135" level="INFO">${current_url} = https://thermos.com/</msg>
 <var>${current_url}</var>
 <doc>Returns the current browser window URL.</doc>
-<status status="PASS" start="2024-06-02T13:47:26.080182" elapsed="0.056515"/>
+<status status="PASS" start="2024-06-03T16:40:00.744652" elapsed="0.012483"/>
 </kw>
 <kw name="Should Be Equal" owner="BuiltIn">
-<msg time="2024-06-02T13:47:26.137697" level="FAIL">https://thermos.com/account/register != https://thermos.com</msg>
 <arg>${current_url}</arg>
 <arg>${DASHBOARD_URL}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="FAIL" start="2024-06-02T13:47:26.136697" elapsed="0.001000">https://thermos.com/account/register != https://thermos.com</status>
+<status status="PASS" start="2024-06-03T16:40:00.758645" elapsed="0.000000"/>
 </kw>
 <kw name="Close Browser" owner="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="NOT RUN" start="2024-06-02T13:47:26.138696" elapsed="0.000000"/>
+<status status="PASS" start="2024-06-03T16:40:00.760031" elapsed="2.410334"/>
 </kw>
-<status status="FAIL" start="2024-06-02T13:46:21.220290" elapsed="64.919407">https://thermos.com/account/register != https://thermos.com</status>
+<status status="PASS" start="2024-06-03T16:39:46.723275" elapsed="16.447090"/>
 </test>
-<status status="FAIL" start="2024-06-02T13:46:20.879613" elapsed="65.261082"/>
+<test id="s1-t2" name="Registration With Existing Email" line="22">
+<kw name="Open Registration Page" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:03.174366" level="INFO">Opening browser 'Chrome' to base url 'https://thermos.com/account/register'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-06-03T16:40:03.173366" elapsed="6.788902"/>
+</kw>
+<status status="PASS" start="2024-06-03T16:40:03.173366" elapsed="6.788902"/>
+</kw>
+<kw name="Enter a valid full name" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:09.964815" level="INFO">Typing text 'Irma Naomi' into text field 'id=FirstName'.</msg>
+<arg>id=FirstName</arg>
+<arg>${FULLNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:09.963781" elapsed="0.261193"/>
+</kw>
+<status status="PASS" start="2024-06-03T16:40:09.962268" elapsed="0.263708"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:10.227973" level="INFO">Typing text 'irmaaaa@mailinator.com' into text field 'id=Email'.</msg>
+<arg>id=Email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:10.226974" elapsed="0.260400"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:10.487374" level="INFO">Typing text '08123456789' into text field 'id=Phone'.</msg>
+<arg>id=Phone</arg>
+<arg>${PHONE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:10.487374" elapsed="0.155650"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:10.644023" level="INFO">Typing text '123456' into text field '//*[@id="CreatePassword"][1]'.</msg>
+<arg>//*[@id="CreatePassword"][1]</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:10.644023" elapsed="0.546942"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:11.191967" level="INFO">Typing text '123456' into text field '//*[@id="CreatePassword"][2]'.</msg>
+<arg>//*[@id="CreatePassword"][2]</arg>
+<arg>${CONFIRM_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:11.190965" elapsed="0.190170"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:11.381135" level="INFO">Clicking button '//*[@id="create_customer"]/div/button'.</msg>
+<arg>//*[@id="create_customer"]/div/button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:11.381135" elapsed="5.144046"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:16.603662" level="INFO">Current page contains text 'This email address is already associated with an account. If this account is yours, you can reset your password'.</msg>
+<arg>This email address is already associated with an account. If this account is yours, you can reset your password</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-06-03T16:40:16.526183" elapsed="0.077479"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:16.643438" level="INFO">${errorMessage} = This email address is already associated with an account. If this account is yours, you can reset your password</msg>
+<var>${errorMessage}</var>
+<arg>//*[@id="create_customer"]/div[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:16.604664" elapsed="0.038774"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${errorMessage}</arg>
+<arg>This email address is already associated with an account. If this account is yours, you can reset your password</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-06-03T16:40:16.644434" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-06-03T16:40:03.172367" elapsed="13.472067"/>
+</test>
+<test id="s1-t3" name="Registration With Mismatched Passwords" line="35">
+<kw name="Generate Timestamped Email" owner="keywords">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-06-03T16:40:16.647436" level="INFO">${timestamp} = 20240603164016</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-06-03T16:40:16.647436" elapsed="0.001000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-03T16:40:16.648436" level="INFO">${EMAIL} = irmaaaa20240603164016@mailinator.com</msg>
+<var>${EMAIL}</var>
+<arg>irmaaaa${timestamp}@mailinator.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-03T16:40:16.648436" elapsed="0.000000"/>
+</kw>
+<return>
+<value>${EMAIL}</value>
+<status status="PASS" start="2024-06-03T16:40:16.649438" elapsed="0.000000"/>
+</return>
+<msg time="2024-06-03T16:40:16.650439" level="INFO">${EMAIL} = irmaaaa20240603164016@mailinator.com</msg>
+<var>${EMAIL}</var>
+<status status="PASS" start="2024-06-03T16:40:16.646436" elapsed="0.004003"/>
+</kw>
+<kw name="Open Registration Page" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:16.651951" level="INFO">Opening browser 'Chrome' to base url 'https://thermos.com/account/register'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-06-03T16:40:16.650439" elapsed="7.366800"/>
+</kw>
+<status status="PASS" start="2024-06-03T16:40:16.650439" elapsed="7.367908"/>
+</kw>
+<kw name="Enter a valid full name" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:24.023888" level="INFO">Typing text 'Irma Naomi' into text field 'id=FirstName'.</msg>
+<arg>id=FirstName</arg>
+<arg>${FULLNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:24.022363" elapsed="0.382386"/>
+</kw>
+<status status="PASS" start="2024-06-03T16:40:24.021375" elapsed="0.383374"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:24.406748" level="INFO">Typing text '08123456789' into text field 'id=Phone'.</msg>
+<arg>id=Phone</arg>
+<arg>${PHONE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:24.405750" elapsed="0.299855"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:24.707611" level="INFO">Typing text '123456' into text field '//*[@id="CreatePassword"][1]'.</msg>
+<arg>//*[@id="CreatePassword"][1]</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:24.707611" elapsed="0.215149"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:24.924761" level="INFO">Typing text '1234567' into text field '//*[@id="CreatePassword"][2]'.</msg>
+<arg>//*[@id="CreatePassword"][2]</arg>
+<arg>${CONFIRM_PASSWORD_MISMATCH}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:24.923801" elapsed="0.629296"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:25.555098" level="INFO">Executing JavaScript:
+window.document.querySelector('.btn-gray.btn-full').click();
+Without any arguments.</msg>
+<arg>window.document.querySelector('.btn-gray.btn-full').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-06-03T16:40:25.554098" elapsed="0.113557"/>
+</kw>
+<kw name="Handle Alert" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:25.668656" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg time="2024-06-03T16:40:25.681226" level="INFO">${alertText} = Passwords do not match.</msg>
+<var>${alertText}</var>
+<arg>accept</arg>
+<doc>Handles the current alert and returns its message.</doc>
+<status status="PASS" start="2024-06-03T16:40:25.667655" elapsed="0.013571"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${alertText}</arg>
+<arg>Passwords do not match.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-06-03T16:40:25.681226" elapsed="0.001001"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-06-03T16:40:25.683226" elapsed="2.349692"/>
+</kw>
+<status status="PASS" start="2024-06-03T16:40:16.645434" elapsed="11.387484"/>
+</test>
+<test id="s1-t4" name="Registration With Empty Email" line="49">
+<kw name="Open Registration Page" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:28.035224" level="INFO">Opening browser 'Chrome' to base url 'https://thermos.com/account/register'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-06-03T16:40:28.035224" elapsed="6.142498"/>
+</kw>
+<status status="PASS" start="2024-06-03T16:40:28.034224" elapsed="6.144793"/>
+</kw>
+<kw name="Enter a valid full name" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:34.181020" level="INFO">Typing text 'Irma Naomi' into text field 'id=FirstName'.</msg>
+<arg>id=FirstName</arg>
+<arg>${FULLNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:34.180018" elapsed="0.336924"/>
+</kw>
+<status status="PASS" start="2024-06-03T16:40:34.180018" elapsed="0.336924"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:34.518453" level="INFO">Typing text '' into text field 'id=Email'.</msg>
+<arg>id=Email</arg>
+<arg>${EMPTY}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:34.518453" elapsed="0.179977"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:34.699942" level="INFO">Typing text '08123456789' into text field 'id=Phone'.</msg>
+<arg>id=Phone</arg>
+<arg>${PHONE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:34.698430" elapsed="0.184980"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:34.884413" level="INFO">Typing text '123456' into text field '//*[@id="CreatePassword"][1]'.</msg>
+<arg>//*[@id="CreatePassword"][1]</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:34.884413" elapsed="0.601275"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:35.486691" level="INFO">Typing text '123456' into text field '//*[@id="CreatePassword"][2]'.</msg>
+<arg>//*[@id="CreatePassword"][2]</arg>
+<arg>${CONFIRM_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:35.486691" elapsed="0.219005"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:35.706696" level="INFO">Executing JavaScript:
+window.document.querySelector('.btn-gray.btn-full').click();
+Without any arguments.</msg>
+<arg>window.document.querySelector('.btn-gray.btn-full').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-06-03T16:40:35.705696" elapsed="5.664540"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:41.459640" level="INFO">Current page contains text 'Email can't be blank.'.</msg>
+<arg>Email can't be blank.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-06-03T16:40:41.370236" elapsed="0.090405"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:41.514435" level="INFO">${errorMessage} = Email can't be blank.</msg>
+<var>${errorMessage}</var>
+<arg>//*[@id="create_customer"]/div[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:41.460641" elapsed="0.053794"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${errorMessage}</arg>
+<arg>Email can't be blank.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-06-03T16:40:41.515946" elapsed="0.001030"/>
+</kw>
+<status status="PASS" start="2024-06-03T16:40:28.034224" elapsed="13.483755"/>
+</test>
+<test id="s1-t5" name="Registration With Empty Password" line="62">
+<kw name="Generate Timestamped Email" owner="keywords">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-06-03T16:40:41.527523" level="INFO">${timestamp} = 20240603164041</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-06-03T16:40:41.526497" elapsed="0.001026"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-06-03T16:40:41.529528" level="INFO">${EMAIL} = irmaaaa20240603164041@mailinator.com</msg>
+<var>${EMAIL}</var>
+<arg>irmaaaa${timestamp}@mailinator.com</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-06-03T16:40:41.528528" elapsed="0.001000"/>
+</kw>
+<return>
+<value>${EMAIL}</value>
+<status status="PASS" start="2024-06-03T16:40:41.529528" elapsed="0.000000"/>
+</return>
+<msg time="2024-06-03T16:40:41.530525" level="INFO">${EMAIL} = irmaaaa20240603164041@mailinator.com</msg>
+<var>${EMAIL}</var>
+<status status="PASS" start="2024-06-03T16:40:41.524981" elapsed="0.005544"/>
+</kw>
+<kw name="Open Registration Page" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:41.534528" level="INFO">Opening browser 'Chrome' to base url 'https://thermos.com/account/register'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-06-03T16:40:41.533526" elapsed="9.498841"/>
+</kw>
+<status status="PASS" start="2024-06-03T16:40:41.531526" elapsed="9.501840"/>
+</kw>
+<kw name="Enter a valid full name" owner="keywords">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:51.072952" level="INFO">Typing text 'Irma Naomi' into text field 'id=FirstName'.</msg>
+<arg>id=FirstName</arg>
+<arg>${FULLNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:51.071954" elapsed="0.411251"/>
+</kw>
+<status status="PASS" start="2024-06-03T16:40:51.071954" elapsed="0.411251"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:51.484205" level="INFO">Typing text 'irmaaaa20240603164041@mailinator.com' into text field 'id=Email'.</msg>
+<arg>id=Email</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:51.483205" elapsed="0.386206"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:51.871411" level="INFO">Typing text '08123456789' into text field 'id=Phone'.</msg>
+<arg>id=Phone</arg>
+<arg>${PHONE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:51.870410" elapsed="2.459922"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:54.331333" level="INFO">Typing text '' into text field '//*[@id="CreatePassword"][1]'.</msg>
+<arg>//*[@id="CreatePassword"][1]</arg>
+<arg>${EMPTY}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:54.330332" elapsed="0.305288"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:54.637678" level="INFO">Typing text '' into text field '//*[@id="CreatePassword"][2]'.</msg>
+<arg>//*[@id="CreatePassword"][2]</arg>
+<arg>${EMPTY}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:40:54.636672" elapsed="0.219252"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:40:54.858925" level="INFO">Executing JavaScript:
+window.document.querySelector('.btn-gray.btn-full').click();
+Without any arguments.</msg>
+<arg>window.document.querySelector('.btn-gray.btn-full').click();</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-06-03T16:40:54.856926" elapsed="8.459145"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:41:03.612467" level="INFO">Current page contains text 'Password can't be blank.'.</msg>
+<arg>Password can't be blank.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-06-03T16:41:03.317071" elapsed="0.296396"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-06-03T16:41:03.760748" level="INFO">${errorMessage} = Password can't be blank.</msg>
+<var>${errorMessage}</var>
+<arg>//*[@id="create_customer"]/div[1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-06-03T16:41:03.620049" elapsed="0.140699"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${errorMessage}</arg>
+<arg>Password can't be blank.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-06-03T16:41:03.765746" elapsed="0.001000"/>
+</kw>
+<status status="PASS" start="2024-06-03T16:40:41.522980" elapsed="22.244276"/>
+</test>
+<status status="PASS" start="2024-06-03T16:39:46.301222" elapsed="77.566323"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Login">Login</stat>
+<stat pass="5" fail="0" skip="0" id="s1" name="Registration">Registration</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-06-03T16:39:46.715742" level="WARN">Error in file 'C:\Users\HP\my_robot_project\resources\keywords.robot' on line 13: The '[Return]' setting is deprecated. Use the 'RETURN' statement instead.</msg>
+<msg time="2024-06-03T16:39:46.721254" level="ERROR">Error in file 'C:\Users\HP\my_robot_project\resources\variables.robot' on line 11: Setting variable '${EMPTY}' failed: Recursive variable definition.</msg>
 </errors>
 </robot>
